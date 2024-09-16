@@ -62,6 +62,17 @@ export default function EnhancedHome() {
     <div className="bg-black relative min-h-screen overflow-hidden flex flex-col">
       <div className="absolute inset-0 opacity-5"></div>
 
+      {/* Background Image for Mobile */}
+      <div className="absolute inset-0 lg:hidden">
+        <Image
+          src="/girlphoto3.png"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-20"
+        />
+      </div>
+
       {/* Navigation */}
       <nav className="relative z-20 flex justify-between items-center py-2 px-6 lg:px-12">
         <div className="flex items-center">
@@ -92,18 +103,18 @@ export default function EnhancedHome() {
           initial="hidden"
           animate="visible"
         >
-        <motion.h1
-      className="text-3xl font-small sm:text-5xl lg:text-3xl xl:text-4xl leading-tight mb-6"
-      variants={itemVariants}
-    >
-      <span className="text-yellow-400">
-        Designing, Printing & Delivery Smiles
-      </span>
-      {' '}
-      <span className="text-gray-400">
-        Since 2018
-      </span>
-    </motion.h1>
+          <motion.h1
+            className="text-3xl font-small sm:text-5xl lg:text-3xl xl:text-4xl leading-tight mb-6"
+            variants={itemVariants}
+          >
+            <span className="text-yellow-400">
+              Designing, Printing & Delivery Smiles
+            </span>
+            {' '}
+            <span className="text-gray-400">
+              Since 2018
+            </span>
+          </motion.h1>
           <motion.p
             className="text-lg text-gray-300 sm:text-xl lg:text-2xl mb-8"
             variants={itemVariants}
@@ -213,15 +224,14 @@ export default function EnhancedHome() {
           </motion.div>
         </motion.div>
 
-        {/* Right Column - Image */}
-        {/* Right Column - Full-sized Image */}
+        {/* Right Column - Image (visible only on larger screens) */}
         <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        className="relative lg:block w-full h-full"
-      >
-        <div className="relative w-full h-full max-w-[600px] mx-auto">
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="relative hidden lg:block w-full h-full"
+        >
+          <div className="relative w-full h-full max-w-[600px] mx-auto">
             <Image
               src="/girlphoto3.png"
               alt="Printing Service Illustration"
@@ -231,7 +241,7 @@ export default function EnhancedHome() {
               className="rounded-lg"
             />
           </div>
-      </motion.div>
+        </motion.div>
       </section>
     </div>
   );

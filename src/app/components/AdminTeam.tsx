@@ -76,7 +76,7 @@ const TeamMemberItem: React.FC<{ member: Member }> = ({ member }) => (
           return (
             <a
               href={link.href}
-              className="text-gray-400 hover:text-yellow-400 transition-colors duration-300"
+              className="text-gray-400 hover:text-black transition-colors duration-300"
               key={i}
               aria-label={link.name}
             >

@@ -68,9 +68,8 @@ export default function EnhancedHome() {
           src="/girlphoto3.png"
           alt="Background"
           layout="fill"
-          objectFit="contain"
-          objectPosition="center top"
-          className="opacity-20 scale-85 sm:scale-50"
+          objectFit="cover"
+          className="opacity-20"
         />
       </div>
 

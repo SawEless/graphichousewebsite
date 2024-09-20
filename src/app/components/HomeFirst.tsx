@@ -69,7 +69,7 @@ export default function EnhancedHome() {
           alt="Background"
           layout="fill"
           objectFit="cover"
-          className="opacity-20"
+          className="opacity-70"
         />
       </div>
 

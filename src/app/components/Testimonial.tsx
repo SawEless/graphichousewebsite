@@ -55,22 +55,26 @@ const TestimonialSection: React.FC = () => {
         
         <div className="grid max-w-xl grid-cols-1 mx-auto mt-8 lg:max-w-full sm:mt-16 lg:mt-20 lg:grid-cols-3 gap-x-6 xl:gap-x-12 gap-y-10">
           <TestimonialCard 
-            image="/images/testimonial/sailesh.jpg"
-            name="Shailesh Bhattarai"
-            position="Founder, Bhattarai Enterprises"
-            quote="The quality of their business card prints is outstanding. Our team's cards make a lasting impression on clients. Fast turnaround and excellent customer service too!"
+            image="/images/testimonial/Utshab.jpg"
+            name="Utshab Thapa"
+            position="JCI Indrapur President 2024
+Social Worker / Businessman"
+            quote="Graphic House Printing Press offers high-quality printing services for a variety of needs, including printing services and custom materials. They are known for their attention to detail, vibrant colors, and professional finishes. I appreciate their quick turnaround times and the helpful customer service team. The pricing is competitive, making it a go-to option for both small businesses and large projects. Overall, it is a reliable and efficient choice for printing needs!"
           />
           <TestimonialCard 
-            image="/images/testimonial/samir.jpg"
-            name="Samir Majhi"
-            position="CEO, Hamro Edtech pvt ltd"
-            quote="Their large format prints for our trade show booth were stunning. The colors were vibrant, and the details crisp. It really helped us stand out at the event."
+            image="/images/testimonial/roshan.jpg"
+            name="Roshan Khanel "
+            position="IT Officer, Sundarharaincha Municipality"
+            quote="Graphic House Designing & Printing Shop delivered exceptional service from start to finish. Their design team brought creative ideas to life, and the print quality was flawless—sharp, vibrant, and professional. The staff was attentive and responsive, ensuring everything met my expectations. They also delivered on time, even with a tight deadline. Highly recommend for top-quality design and printing services!"
           />
           <TestimonialCard 
-            image="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/1/avatar-3.jpg"
-            name="Srijana kafle"
-            position="Product Manager, Sajha Travels"
-            quote="The brochures they printed for our product launch were simply perfect. The paper quality and color reproduction exceeded our expectations. Highly recommended!"
+            image="/images/testimonial/Narayan.jpg"
+            name="Narayan Karki"
+            position="Chamber of Commerce and Industry, Sundarharaincha, Morang, President 2024"
+            quote="I had the pleasure of working with Graphic House Printing Press, and I am thoroughly impressed with their service! 
+their team was professional, responsive.  They also delivered on time, which was critical for my project. 
+The entire process was seamless, and their attention to detail made a huge difference. I highly recommend Graphic House 
+for any printing needs. Excellent service, high-quality output, and fantastic customer care!"
           />
         </div>
       </div>

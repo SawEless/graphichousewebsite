@@ -68,7 +68,7 @@ const StatsSection: React.FC = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, [images.length]);
@@ -118,8 +118,8 @@ const StatsSection: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300">
               <div className="absolute bottom-0 p-6 text-white">
-                <h3 className="text-2xl font-bold">Shop Image {currentImage + 1}</h3>
-                <p className="text-lg mt-2">Description of image {currentImage + 1}</p>
+                {/* <h3 className="text-2xl font-bold">Our works {currentImage + 1}</h3>
+                <p className="text-lg mt-2">Description of image {currentImage + 1}</p> */}
               </div>
             </div>
           </div>

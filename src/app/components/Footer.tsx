@@ -33,7 +33,7 @@ export default function Footer() {
               <span className="font-bold text-gray-600">Phone:</span> 021-547547 | 9842153371
             </p>
             <p className="text-gray-600 mb-2">
-              <span className="font-bold text-gray">Address:</span> SundarHaraincha, Biratchowk
+              <span className="font-bold text-gray">Address:</span> Sundarharaincha, Biratchowk
             </p>
             <p className="text-gray-600 mb-2">
               <span className="font-bold text-gray">Service Enquiry:</span>

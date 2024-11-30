@@ -1,8 +1,8 @@
 import React from 'react';
-import { fetchProductCategories } from '../lib/api';
+import { fetchProductCategories } from '../../app/lib/api.js';
 import Link from 'next/link';
 import { Printer } from 'lucide-react';
-import CategoryCard from '../components/CategoryCard'; // Ensure this path is correct
+import CategoryCard from '../components/CategoryCard'; // Adjust path if needed
 
 // Define types for the category data
 interface Photo {
@@ -33,19 +33,18 @@ interface Category {
   attributes: CategoryAttributes;
 }
 
-// Function to fetch categories
-const fetchCategories = async (): Promise<Category[]> => {
+// Dynamic rendering (SSR behavior in App Router)
+export const dynamic = 'force-dynamic';
+
+const CategoriesPage = async () => {
+  let categories: Category[] = [];
+
   try {
     const response = await fetchProductCategories();
-    return response.data || [];
+    categories = response.data || [];
   } catch (error) {
     console.error('Error fetching product categories:', error);
-    return [];
   }
-};
-
-const CategoriesPage: React.FC = async () => {
-  const categories: Category[] = await fetchCategories();
 
   return (
     <div className="min-h-screen bg-black text-white font-sans">
@@ -72,8 +71,12 @@ const CategoriesPage: React.FC = async () => {
         )}
 
         <div className="mt-20 text-center">
-          <h2 className="text-3xl font-semibold mb-6 text-yellow-400">Can't find what you're looking for?</h2>
-          <p className="text-gray-300 mb-8">Our team is here to help with custom printing solutions.</p>
+          <h2 className="text-3xl font-semibold mb-6 text-yellow-400">
+            Can't find what you're looking for?
+          </h2>
+          <p className="text-gray-300 mb-8">
+            Our team is here to help with custom printing solutions.
+          </p>
           <Link href="/contact" className="inline-flex items-center bg-yellow-500 text-black px-8 py-3 rounded-lg hover:bg-yellow-600 transition duration-300">
             <Printer className="mr-2 w-6 h-6" />
             Contact Us

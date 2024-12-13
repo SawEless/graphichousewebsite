@@ -74,7 +74,8 @@ const TestimonialSection: React.FC = () => {
           <TestimonialCard 
             image="/images/testimonial/roshan.jpg"
             name="Roshan Khanel"
-            position="IT Officer, Sundarharaincha Municipality"
+            position="Former IT Officer"
+            secondaryPosition="Computer Operator , Sundarharaincha Municipality"
             quote="Graphic House Designing & Printing Shop delivered exceptional service from start to finish. Their design team brought creative ideas to life, and the print quality was flawless—sharp, vibrant, and professional. The staff was attentive and responsive, ensuring everything met my expectations. They also delivered on time, even with a tight deadline. Highly recommend for top-quality design and printing services!"
           />
         </div>

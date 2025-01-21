@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://20.198.254.137:1337/api';
-const TOKEN = '2e43ac089dd70dac30cd66bdf5a086dcd5f1b797855015c47fc12df18f15342f2e630eeb78189e93bb43f4ef25074f032ca2a7c04e313305105ee642430c42d10297effca76113edc8e34326e445dc74a079494c4525bc5bc659ced00dcbaf53e9e9f3bcc89277c62643b1076d6129c5a1f29bbf62bf8cd842b08b470a3075c4';
-
+const API_URL = 'https://strapi-graphichouse-v1.onrender.com/api';
+const TOKEN = '1c93685b4cee2d08d18d573f22cc9f6f7fdf052c6058d5a639354e2fd855fa52291b03afe2025521ccfbb1519e2b2b17ef9c6cd5c4512657ee0b548596817d759a331d298e5667c727b3dd5f533e98d22250fc20f21f68363b8c960406c3906921e170d8e171783ce2aa8e51f7a413cc839ee693dc20861478c11a20643eff1d'
 const axiosInstance = axios.create({
   baseURL: API_URL,
   headers: {
@@ -54,7 +53,7 @@ export const fetchProductDetails = async (productId) => {
 
 export const fetchProductPricing = async (productId) => {
   try {
-    const response = await axiosInstance.get(`/pricings?filters[product][id][$eq]=${productId}&populate=*`);
+    const response = await axiosInstance.get(`/pricings?filters[products][id][$eq]=${productId}&populate=*`);
     return response.data;
   } catch (error) {
     console.error('Error fetching product pricing:', error);

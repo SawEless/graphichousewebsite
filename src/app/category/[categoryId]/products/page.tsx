@@ -1,55 +1,25 @@
-import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
-import Link from 'next/link';
 import { fetchProductsByCategory, fetchProductCategory, fetchProductPricing } from '../../../lib/api';
 import ProductGrid from '../../../components/ProductGrid';
-
+import { Product } from '../../../components/types';
+import next from 'next';
+import Link from 'next/link';
 type ProductsPageParams = {
   categoryId: string;
 };
 
-interface Pricing {
-  attributes: {
-    min: number;
-    max?: number;
-    Price: number;
-  };
-}
-
-interface Product {
-  id: string;
-  attributes: {
-    Name: string;
-    Description: string;
-    Price: number;
-    Photo?: {
-      data?: Array<{
-        attributes: {
-          url: string;
-        };
-      }>;
-    };
-  };
-}
-
-interface PricingData {
-  data: Pricing[];
-}
-
-interface ProductWithPricing extends Product {
-  pricing: Pricing[];
-}
-
 export default async function ProductsPage({ params }: { params: ProductsPageParams }) {
   const { categoryId } = params;
+
   const [products, categoryName] = await Promise.all([
     fetchProducts(categoryId),
-    fetchCategoryName(categoryId)
+    fetchCategoryName(categoryId),
   ]);
 
-  const productsWithPricing: ProductWithPricing[] = await Promise.all(
-    products.map(async (product: Product) => {
+  // Add pricing to products
+  const productsWithPricing: Product[] = await Promise.all(
+    products.map(async (product) => {
       try {
-        const pricingData: PricingData = await fetchProductPricing(product.id);
+        const pricingData = await fetchProductPricing(product.id);
         return { ...product, pricing: pricingData.data || [] };
       } catch (error) {
         console.error(`Error fetching pricing for product ${product.id}:`, error);
@@ -69,9 +39,7 @@ export default async function ProductsPage({ params }: { params: ProductsPagePar
             Explore our wide range of high-quality printing products in this category.
           </p>
         </div>
-        
         <ProductGrid products={productsWithPricing} />
-        
         <div className="mt-16 text-center">
           <Link href="/category">
             <span className="inline-block bg-yellow-400 text-black px-8 py-4 rounded-full hover:bg-yellow-300 transition duration-300 text-lg font-semibold font-sans">
